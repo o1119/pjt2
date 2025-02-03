@@ -20,5 +20,5 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd ${{ secrets.PATH }}
-          git pull https://github.com/o1119/pjt2.git main
-          wall "github auto-puller" jobs done
+          git pull origin main
+          # wall "github auto-puller" jobs done
