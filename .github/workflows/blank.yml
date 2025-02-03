@@ -20,5 +20,6 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd ${{ secrets.PATH }}
+          echo `pwd` > gitcmd.log
           ./gitpull.sh >> log.txt
           
