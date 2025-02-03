@@ -19,6 +19,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          cd ${{ secrets.PATH }}
-          git pull origin main
-          # wall "github auto-puller" jobs done
+          cd ${{ secrets.PATH }} || { echo "❌ 경로가 존재하지 않습니다."; exit 1; }
+          git status
+          git pull origin main || { echo "❌ Git pull 실패"; exit 1; }
+          echo "✅ GitHub auto-puller 완료!"
