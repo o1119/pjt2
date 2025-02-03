@@ -21,5 +21,4 @@ jobs:
         script: |
           cd ${{ secrets.PATH }}
           git pull origin main
-          git pull origin main
           wall "github auto-puller" jobs done
